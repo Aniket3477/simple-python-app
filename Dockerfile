@@ -1,5 +1,5 @@
-FROM python:3.9-slim
-RUN apt-get update && apt-get upgrade -y
+FROM python:3.9-alpine
+RUN apk update && apk upgrade # Alpine ke liye apk command
 WORKDIR /app
 
 COPY requirements.txt .
