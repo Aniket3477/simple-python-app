@@ -58,7 +58,7 @@ terraform apply -auto-approve
 
 Trigger Pipeline:
 Push any changes to the main branch to trigger the automated Jenkins build.
----
+
 
 
 
