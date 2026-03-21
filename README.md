@@ -48,9 +48,10 @@ The pipeline follows a strict security-first workflow:
    ```bash
    git clone [https://github.com/Aniket3477/simple-python-app.git](https://github.com/Aniket3477/simple-python-app.git)
 
-Infrastructure Setup:
-
-Bash
+## 📖 How to Run
+### 1. Infrastructure Setup
+```bash
+git clone [https://github.com/Aniket3477/simple-python-app.git](https://github.com/Aniket3477/simple-python-app.git)
 cd simple-python-app
 terraform init
 terraform apply -auto-approve
@@ -58,5 +59,12 @@ terraform apply -auto-approve
 Trigger Pipeline:
 Push any changes to the main branch to trigger the automated Jenkins build.
 
-👨‍💻 Developed By
-Aniket Saini | LinkedIn | GitHub
+---
+
+## 👨‍💻 Developed By
+
+| Name | Degree | Profiles |
+| :--- | :--- | :--- |
+| **Aniket Saini** | B.Tech CSE (Cloud Technology & Information Security) | [LinkedIn](http://www.linkedin.com/in/aniket-saini-777cloudtech) | [GitHub](https://github.com/Aniket3477) |
+
+---
