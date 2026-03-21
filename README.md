@@ -60,9 +60,13 @@ Trigger Pipeline:
 Push any changes to the main branch to trigger the automated Jenkins build.
 ---
 
----
 
-## 👨‍💻 Developed By
+
+
+
+
+
+### 👨‍💻 Developed By
 
 | Name | Degree | Profiles |
 | :--- | :--- | :--- |
