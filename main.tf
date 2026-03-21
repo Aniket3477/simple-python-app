@@ -31,8 +31,8 @@ resource "aws_security_group" "devsecops_sg" {
   # Outbound Rule: Internet access ke liye (All Traffic)
   egress {
     description = "Allowing access for DevSecOps project"
-    from_port   = 0
-    to_port     = 0
+    from_port   = 443
+    to_port     = 443
     protocol    = "-1" # -1 matlab saare protocols allowed hain
     cidr_blocks = ["0.0.0.0/0"]
   }
