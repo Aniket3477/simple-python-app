@@ -52,14 +52,14 @@ The pipeline follows a strict security-first workflow:
 
 ##🚀 Initialize & Apply Terraform:
 
- { ```bash
-   cd simple-python-app
-   terraform init
-   terraform plan
-   terraform apply -auto-approve  ]
+    ```bash
+     cd simple-python-app
+     terraform init
+     terraform plan
+     terraform apply -auto-approve     
 
-   
-## 👨💻 Developed By
+
+## 👨‍💻 Developed By
 
 | Name | Degree | Profiles |
 | :--- | :--- | :--- |
