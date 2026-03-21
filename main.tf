@@ -16,7 +16,7 @@ resource "aws_security_group" "devsecops_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Sabke liye open (testing ke liye)
+    cidr_blocks = ["49.36.144.10/32"] # Sabke liye open (testing ke liye)
   }
 
   # Inbound Rule: Jenkins/App ke liye (Port 8080)
@@ -25,7 +25,7 @@ resource "aws_security_group" "devsecops_sg" {
    from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["49.36.144.10/32"]
   }
 
   # Outbound Rule: Internet access ke liye (All Traffic)
