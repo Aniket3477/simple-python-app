@@ -33,10 +33,16 @@ resource "aws_security_group" "devsecops_sg" {
     description = "Allowing access for DevSecOps project"
     from_port   = 443
     to_port     = 443
-    protocol    = "-1" # -1 matlab saare protocols allowed hain
+    protocol    = "tcp" # -1 matlab saare protocols allowed hain
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+  egress {
+    description = "Allow outbound HTTP for updates"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   tags = {
     Name = "DevSecOps-SG"
   }
@@ -48,6 +54,11 @@ resource "aws_instance" "devsecops_server" {
   ami           = "ami-03bb6d83c60fc5f7c" # Ubuntu 22.04 LTS (Mumbai)
   instance_type = "t3.small"             # Jenkins ke liye minimum requirement
 
+# Fix 2: Enforce IMDSv2 (High Issue)
+  metadata_options {
+    http_endpoint = "enabled"
+    http_tokens   = "required" 
+  }
   # Console par banayi gayi Key ka naam yahan likhein
   key_name      = "my-laptop-key" 
 
@@ -59,6 +70,8 @@ resource "aws_instance" "devsecops_server" {
   root_block_device {
     volume_size = 20
     volume_type = "gp3"
+    encrypted   = true    # Fix 1: Encryption yahan add karein
+    delete_on_termination = true
   }
 
   tags = {
