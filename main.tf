@@ -12,6 +12,7 @@ resource "aws_security_group" "devsecops_sg" {
 
   # Inbound Rule: SSH ke liye (Port 22)
   ingress {
+    description = "Allow SSH from anywhere"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -20,7 +21,8 @@ resource "aws_security_group" "devsecops_sg" {
 
   # Inbound Rule: Jenkins/App ke liye (Port 8080)
   ingress {
-    from_port   = 8080
+   description = "Allow jenkins app from anywhere" 
+   from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
@@ -28,6 +30,7 @@ resource "aws_security_group" "devsecops_sg" {
 
   # Outbound Rule: Internet access ke liye (All Traffic)
   egress {
+    description = "Allow SSH from anywhere"
     from_port   = 0
     to_port     = 0
     protocol    = "-1" # -1 matlab saare protocols allowed hain
